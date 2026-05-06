@@ -3,99 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Link IQ</title>
-    <!-- استيراد خط القاهرة للتنسيق العربي الاحترافي -->
+    <title>Digital Link IQ | الحلول الذكية</title>
+    <!-- خط القاهرة الاحترافي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; text-align: center; background: #f0f4f8; color: #1a202c; margin: 0; padding: 0; }
+        :root {
+            --primary: #1e3a8a;
+            --accent: #3b82f6;
+            --bg: #f8fafc;
+        }
         
-        /* ضبط الغلاف ليكون متجاوباً تماماً */
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--bg); 
+            color: #1e293b; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6;
+        }
+        
+        /* غلاف متدرج احترافي بدون صور */
         header { 
-            position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('logo.png');
-            background-size: cover; /* تجعل الصورة تغطي المساحة بالكامل */
-            background-position: center; /* توسيط الصورة */
-            height: 300px; /* طول ثابت للغلاف لكي لا يطغى على الشاشة */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white; 
-            padding: 20px;
+            padding: 100px 20px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
         }
 
-        .header-content {
-            padding: 15px 25px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.3); /* خلفية داكنة خفيفة للنص */
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 90%; /* لضمان عدم خروج النص عن الشاشة في الموبايل */
-        }
+        h1 { margin: 0; font-size: 2.8em; font-weight: 900; letter-spacing: -1px; }
+        p.tagline { font-size: 1.2em; opacity: 0.9; margin-top: 10px; }
 
-        h1 { margin: 0; font-size: 2.2em; font-weight: 900; line-height: 1.2; }
-        p.subtitle { font-size: 1.1em; margin-top: 8px; opacity: 0.9; }
-
-        .container {
-            padding: 0 15px;
-            max-width: 500px;
-            margin: -40px auto 40px; /* تداخل البطاقة مع الغلاف */
+        .content {
+            max-width: 600px;
+            margin: -60px auto 50px;
+            padding: 0 20px;
         }
 
         .card { 
             background: white; 
-            padding: 30px 20px; 
-            border-radius: 25px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            border: 1px solid #e2e8f0;
+            padding: 40px 30px; 
+            border-radius: 35px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #eff6ff;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5em;
+        }
+
+        h2 { color: var(--primary); font-size: 1.8em; margin-bottom: 15px; font-weight: 800; }
+        .card p { color: #64748b; font-size: 1.1em; }
 
         .btn { 
-            display: inline-block; 
-            background: #1e3a8a; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary); 
             color: white; 
-            padding: 15px 35px; 
+            padding: 18px 30px; 
             text-decoration: none; 
-            border-radius: 50px; 
+            border-radius: 20px; 
             font-weight: bold; 
-            font-size: 1.1em;
-            margin-top: 25px; 
-            transition: 0.3s;
-            width: 80%; /* جعل الزر عريضاً في الموبايل */
-            box-shadow: 0 8px 20px rgba(30,58,138,0.2);
+            font-size: 1.2em;
+            margin-top: 35px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.25);
         }
 
-        .btn:active { transform: scale(0.95); }
-
-        footer { padding: 30px 20px; color: #718096; font-size: 0.85em; }
-
-        /* تعديلات خاصة للموبايلات الصغيرة جداً */
-        @media (max-width: 400px) {
-            h1 { font-size: 1.8em; }
-            header { height: 250px; }
-            .btn { width: 100%; padding: 12px 20px; }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.35);
+            background: #1e40af;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Digital Link IQ</h1>
-            <p class="subtitle">الحلول البرمجية لخدمة المجتمع العراقي</p>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="card">
-            <h2 style="color: #1e3a8a; font-weight: 700;">تطبيق Bill X</h2>
-            <p style="color: #4a5568; line-height: 1.6;">وداعاً لأخطاء الحساب! تطبيق Bill X يحسب فاتورة الكهرباء بدقة متناهية وفق التسعيرة الرسمية.</p>
-            <a href="https://digital-link-iq.github.io/BillX/" class="btn">صفحة التحميل والخدمات</a>
-        </div>
-    </div>
+        .btn svg { margin-left: 10px; }
 
-    <footer>
-        <p>© 2024 Digital Link IQ</p>
-        <p>بكل فخر من العراق 🇮🇶</p>
-    </footer>
-</body>
-</html>
+        footer { 
+            margin-top: 20px; 
+            padding: 40px 20px; 
+            color: #94a3b8; 
+            font-size: 0.9em; 
+            text-align: center; 
+        }
+
+        /* تحسينات الموبايل */
+        @media (max-width: 480px) {
+            h1 {
