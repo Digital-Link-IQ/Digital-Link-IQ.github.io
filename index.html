@@ -6,21 +6,77 @@
     <title>Digital Link IQ</title>
     <style>
         body { font-family: sans-serif; text-align: center; background: #f0f4f8; color: #1a202c; margin: 0; padding: 0; }
-        header { background: #1e3a8a; color: white; padding: 60px 20px; }
-        .card { background: white; padding: 30px; border-radius: 20px; max-width: 400px; margin: 40px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+        
+        /* جعل الهيدر يستخدم الصورة كغلاف */
+        header { 
+            background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(30, 58, 138, 0.6)), 
+                        url('logo.png'); /* تأكد من رفع الصورة بنفس الاسم logo.png */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* يجعل الصورة ثابتة عند التمرير */
+            color: white; 
+            padding: 120px 20px; 
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+        }
+
+        .header-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px); /* تأثير الضبابية الزجاجي */
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            max-width: 400px; 
+            margin: -60px auto 40px; /* جعل البطاقة تتداخل مع الغلاف بشكل عصري */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn { 
+            display: inline-block; 
+            background: #2563eb; 
+            color: white; 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            margin-top: 20px; 
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #1d4ed8;
+        }
+
+        footer { padding: 40px 20px; color: #718096; font-size: 0.9em; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Digital Link IQ</h1>
-        <p>مستقبل الحلول البرمجية في العراق</p>
+        <div class="header-content">
+            <h1 style="font-size: 3.5em; margin: 0;">Digital Link IQ</h1>
+            <p style="font-size: 1.3em; opacity: 0.9; margin-top: 10px;">نبتكر الحلول التقنية لخدمة المجتمع العراقي</p>
+        </div>
     </header>
+
     <div class="card">
-        <h2>تطبيق Bill X</h2>
-        <p>حساب فاتورة الكهرباء بدقة متناهية</p>
+        <h2 style="color: #1e3a8a;">تطبيق Bill X</h2>
+        <p style="color: #4a5568;">أدق حاسبة لفاتورة الكهرباء في العراق، متوافقة مع نظام النسبة والتناسب الجديد.</p>
         <a href="https://digital-link-iq.github.io/BillX/" class="btn">دخول لصفحة التحميل</a>
     </div>
-    <footer>© 2024 Digital Link IQ</footer>
+
+    <footer>
+        <p>© 2024 Digital Link IQ</p>
+        <p style="font-size: 0.8em;">بكل فخر من العراق 🇮🇶</p>
+    </footer>
 </body>
 </html>
