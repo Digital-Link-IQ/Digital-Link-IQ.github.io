@@ -3,99 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Link IQ | الحلول الذكية</title>
-    <!-- خط القاهرة الاحترافي -->
+    <title>تطبيق BIL - حاسبة الكهرباء</title>
+    <!-- استيراد خط القاهرة -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1e3a8a;
-            --accent: #3b82f6;
-            --bg: #f8fafc;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Cairo', sans-serif; 
-            background-color: var(--bg); 
-            color: #1e293b; 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6;
+            background-color: #f4f7f6; 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
         }
         
-        /* غلاف متدرج احترافي بدون صور */
-        header { 
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; 
-            padding: 100px 20px;
-            border-bottom-left-radius: 60px;
-            border-bottom-right-radius: 60px;
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+        /* الهيدر المتدرج */
+        .hero {
+            background: linear-gradient(135deg, #004e92, #000428);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        h1 { margin: 0; font-size: 2.8em; font-weight: 900; letter-spacing: -1px; }
-        p.tagline { font-size: 1.2em; opacity: 0.9; margin-top: 10px; }
+        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; }
 
-        .content {
-            max-width: 600px;
-            margin: -60px auto 50px;
-            padding: 0 20px;
+        /* حاوية المحتوى */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
-        .card { 
-            background: white; 
-            padding: 40px 30px; 
-            border-radius: 35px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
-            border: 1px solid rgba(226, 232, 240, 0.8);
+        .download-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
         }
 
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: #eff6ff;
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
             border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2.5em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        h2 { color: var(--primary); font-size: 1.8em; margin-bottom: 15px; font-weight: 800; }
-        .card p { color: #64748b; font-size: 1.1em; }
-
-        .btn { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary); 
-            color: white; 
-            padding: 18px 30px; 
-            text-decoration: none; 
-            border-radius: 20px; 
-            font-weight: bold; 
-            font-size: 1.2em;
-            margin-top: 35px; 
+        .download-btn {
+            display: inline-block;
+            background-color: #0088cc;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.25);
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.35);
-            background: #1e40af;
+        .download-btn:hover {
+            background-color: #006699;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,136,204,0.4);
         }
 
-        .btn svg { margin-left: 10px; }
-
-        footer { 
-            margin-top: 20px; 
-            padding: 40px 20px; 
-            color: #94a3b8; 
-            font-size: 0.9em; 
-            text-align: center; 
+        /* فوتر تحت التحديث */
+        .footer-update {
+            background: #e9ecef;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
         }
 
-        /* تحسينات الموبايل */
-        @media (max-width: 480px) {
-            h1 {
+        .update-text {
+            color: #dc3545;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* حركة بسيطة للفوتر */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .update-text span { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>BIL APP</h1>
+        <p>المنصة الرسمية لتطبيق حاسبة الكهرباء في العراق</p>
+    </section>
+
+    <main class="main-content">
+        <div class="download-card">
+            <!-- سيظهر الشعار هنا بعد رفعه باسم logo.png -->
+            <img src="assets/images/logo.png" alt="Logo" class="app-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2807/2807575.png'">
+            <h2>حمل التطبيق الآن</h2>
+            <p>احصل على أحدث نسخة من تطبيق BIL برابط مباشر وسريع.</p>
+            
+            <a href="https://github.com/Digital-Link-IQ/BillX/releases/latest/download/Bill.X.apk" class="download-btn">
+                تحميل الملف (APK)
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-update">
+        <div class="update-text">
+            <span>●</span>
+            موقع تطبيق BIL تحت التحديث حالياً لإضافة مميزات جديدة
+        </div>
+    </footer>
+
+</body>
+</html>
