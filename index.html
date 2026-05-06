@@ -4,79 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Link IQ</title>
+    <!-- استيراد خط القاهرة للتنسيق العربي الاحترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; text-align: center; background: #f0f4f8; color: #1a202c; margin: 0; padding: 0; }
+        body { font-family: 'Cairo', sans-serif; text-align: center; background: #f0f4f8; color: #1a202c; margin: 0; padding: 0; }
         
-        /* جعل الهيدر يستخدم الصورة كغلاف */
+        /* ضبط الغلاف ليكون متجاوباً تماماً */
         header { 
-            background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(30, 58, 138, 0.6)), 
-                        url('logo.png'); /* تأكد من رفع الصورة بنفس الاسم logo.png */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* يجعل الصورة ثابتة عند التمرير */
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('logo.png');
+            background-size: cover; /* تجعل الصورة تغطي المساحة بالكامل */
+            background-position: center; /* توسيط الصورة */
+            height: 300px; /* طول ثابت للغلاف لكي لا يطغى على الشاشة */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white; 
-            padding: 120px 20px; 
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            padding: 20px;
         }
 
         .header-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px); /* تأثير الضبابية الزجاجي */
-            padding: 20px;
-            border-radius: 20px;
-            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.3); /* خلفية داكنة خفيفة للنص */
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 90%; /* لضمان عدم خروج النص عن الشاشة في الموبايل */
+        }
+
+        h1 { margin: 0; font-size: 2.2em; font-weight: 900; line-height: 1.2; }
+        p.subtitle { font-size: 1.1em; margin-top: 8px; opacity: 0.9; }
+
+        .container {
+            padding: 0 15px;
+            max-width: 500px;
+            margin: -40px auto 40px; /* تداخل البطاقة مع الغلاف */
         }
 
         .card { 
             background: white; 
-            padding: 30px; 
-            border-radius: 20px; 
-            max-width: 400px; 
-            margin: -60px auto 40px; /* جعل البطاقة تتداخل مع الغلاف بشكل عصري */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            position: relative;
-            z-index: 10;
+            padding: 30px 20px; 
+            border-radius: 25px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border: 1px solid #e2e8f0;
         }
 
         .btn { 
             display: inline-block; 
-            background: #2563eb; 
+            background: #1e3a8a; 
             color: white; 
-            padding: 14px 28px; 
+            padding: 15px 35px; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: bold; 
-            margin-top: 20px; 
+            font-size: 1.1em;
+            margin-top: 25px; 
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            width: 80%; /* جعل الزر عريضاً في الموبايل */
+            box-shadow: 0 8px 20px rgba(30,58,138,0.2);
         }
 
-        .btn:hover {
-            transform: scale(1.05);
-            background: #1d4ed8;
-        }
+        .btn:active { transform: scale(0.95); }
 
-        footer { padding: 40px 20px; color: #718096; font-size: 0.9em; }
+        footer { padding: 30px 20px; color: #718096; font-size: 0.85em; }
+
+        /* تعديلات خاصة للموبايلات الصغيرة جداً */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.8em; }
+            header { height: 250px; }
+            .btn { width: 100%; padding: 12px 20px; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1 style="font-size: 3.5em; margin: 0;">Digital Link IQ</h1>
-            <p style="font-size: 1.3em; opacity: 0.9; margin-top: 10px;">نبتكر الحلول التقنية لخدمة المجتمع العراقي</p>
+            <h1>Digital Link IQ</h1>
+            <p class="subtitle">الحلول البرمجية لخدمة المجتمع العراقي</p>
         </div>
     </header>
 
-    <div class="card">
-        <h2 style="color: #1e3a8a;">تطبيق Bill X</h2>
-        <p style="color: #4a5568;">أدق حاسبة لفاتورة الكهرباء في العراق، متوافقة مع نظام النسبة والتناسب الجديد.</p>
-        <a href="https://digital-link-iq.github.io/BillX/" class="btn">دخول لصفحة التحميل</a>
+    <div class="container">
+        <div class="card">
+            <h2 style="color: #1e3a8a; font-weight: 700;">تطبيق Bill X</h2>
+            <p style="color: #4a5568; line-height: 1.6;">وداعاً لأخطاء الحساب! تطبيق Bill X يحسب فاتورة الكهرباء بدقة متناهية وفق التسعيرة الرسمية.</p>
+            <a href="https://digital-link-iq.github.io/BillX/" class="btn">صفحة التحميل والخدمات</a>
+        </div>
     </div>
 
     <footer>
         <p>© 2024 Digital Link IQ</p>
-        <p style="font-size: 0.8em;">بكل فخر من العراق 🇮🇶</p>
+        <p>بكل فخر من العراق 🇮🇶</p>
     </footer>
 </body>
 </html>
