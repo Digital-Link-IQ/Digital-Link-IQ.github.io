@@ -23,7 +23,7 @@
         .hero {
             background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             color: white;
-            padding: 80px 20px 120px; /* مساحة أكبر في الأسفل للتداخل */
+            padding: 80px 20px 120px;
         }
         .hero h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; }
 
@@ -33,9 +33,12 @@
             padding: 40px 20px;
             border-radius: 30px;
             max-width: 450px;
-            margin: -60px auto 40px; /* رفعه للأعلى ليتداخل مع الهيرو */
+            margin: 0 auto 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             border: 1px solid #e2e8f0;
+        }
+        .card:first-child {
+            margin-top: -60px; /* فقط البطاقة الأولى تتداخل مع الهيرو */
         }
         .card h3 { font-size: 1.8rem; color: #333; margin-bottom: 20px; font-weight: 700; }
 
@@ -98,13 +101,12 @@
         <h3>تطبيق Bill X</h3>
         <a href="https://digital-link-iq.github.io/BillX/" class="download-btn">تحميل التطبيق</a>
     </main>
- 
-    
     
     <main class="card">
         <h3>تطبيق Nnibras-Almomen</h3>
         <a href="https://digital-link-iq.github.io/Nnibras-almomen/" class="download-btn">تحميل التطبيق</a>
     </main>
+
     <footer class="footer">
         <div class="status-badge">
             <span class="dot"></span>
