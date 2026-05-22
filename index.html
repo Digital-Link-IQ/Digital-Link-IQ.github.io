@@ -84,7 +84,22 @@
             animation: blink 1.5s infinite;
         }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .copyright { margin-top: 15px; font-size: 0.75rem; color: #94a3b8; }
+        .copyright { 
+            margin-top: 15px; 
+            font-size: 0.75rem; 
+            color: #94a3b8;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { 
+                opacity: 0.5;
+                text-shadow: 0 0 5px rgba(30, 58, 138, 0.3);
+            }
+            50% { 
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(30, 58, 138, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+            }
+        }
 
         /* Media Queries للاستجابة */
         @media (max-width: 768px) {
