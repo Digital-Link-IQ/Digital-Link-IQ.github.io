@@ -3,155 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Link IQ</title>
+    <title>Digital Link IQ | متجر التطبيقات — تطبيقات عراقية في مكان واحد</title>
+    <meta name="description" content="متجر Digital Link IQ — تطبيقات وخدمات رقمية عراقية في مكان واحد. حمّل تطبيق Bill X لحساب فاتورة الكهرباء وتطبيق نبراس المؤمن الإسلامي مجاناً.">
+    <meta name="theme-color" content="#1e3a8a">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_IQ">
+    <meta property="og:site_name" content="Digital Link IQ">
+    <meta property="og:title" content="Digital Link IQ | متجر التطبيقات العراقية">
+    <meta property="og:description" content="تطبيقات وخدمات رقمية عراقية في مكان واحد — حمّلها الآن مجاناً.">
+    <meta property="og:image" content="https://digital-link-iq.github.io/logo.png">
+    <meta property="og:url" content="https://digital-link-iq.github.io/">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Digital Link IQ | متجر التطبيقات العراقية">
+    <meta name="twitter:description" content="تطبيقات وخدمات رقمية عراقية في مكان واحد — حمّلها الآن مجاناً.">
+    <meta name="twitter:image" content="https://digital-link-iq.github.io/logo.png">
+    <!-- الأيقونة -->
+    <link rel="icon" type="image/png" href="https://digital-link-iq.github.io/logo.png">
+    <link rel="apple-touch-icon" href="https://digital-link-iq.github.io/logo.png">
     <!-- خط القاهرة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: #f8fafc; color: #1e293b; text-align: center; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background: #f8fafc; color: #1e293b; }
 
-        /* الهيدر العلوي */
+        a:focus-visible, input:focus-visible, .chip:focus-visible {
+            outline: 3px solid #93c5fd;
+            outline-offset: 2px;
+        }
+
+        /* ===== النافذة العلوية ===== */
         .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             background: white;
-            padding: 15px;
-            border-bottom: 3px solid #1e3a8a;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
-        .navbar h1 { color: #1e3a8a; font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
-
-        /* منطقة الهيرو المتدرجة */
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-            padding: 60px 20px 100px;
-        }
-        .hero h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
-
-        /* بطاقة التطبيق المتداخلة */
-        .card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
-            max-width: 450px;
-            margin: 0 auto 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border: 1px solid #e2e8f0;
-        }
-        .card:first-child {
-            margin-top: -50px;
-        }
-        .card h3 { font-size: 1.5rem; color: #333; margin-bottom: 15px; font-weight: 700; }
-
-        /* الزر الأخضر */
-        .download-btn {
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 14px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(40,167,69,0.3);
-            width: 85%;
-        }
-        .download-btn:hover {
-            background-color: #218838;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(40,167,69,0.4);
-        }
-
-        /* الفوتر وشريط التحديث */
-        .footer { padding: 30px 20px; }
-        .status-badge {
-            display: inline-flex;
+        .navbar-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
             align-items: center;
-            background: #fff3f3;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .brand img { width: 42px; height: 42px; border-radius: 12px; }
+        .brand h1 { color: #1e3a8a; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.5px; }
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 22px;
+            transition: 0.2s;
+        }
+        .nav-links a:last-child { margin-left: 0; }
+        .nav-links a:hover { color: #1e3a8a; }
+
+        /* ===== الهيرو ===== */
+        .hero {
+            background: linear-gradient(135deg, #0f2350 0%, #1e3a8a 45%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            overflow: hidden;
+        }
+        .hero-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            text-align: right;
+        }
+        .hero-text { flex: 1; }
+        .hero-text h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; line-height: 1.4; }
+        .hero-text h2 span { color: #bfdbfe; }
+        .hero-text p { color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.8; max-width: 480px; }
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border-radius: 50px;
+            padding: 13px 20px;
+            max-width: 420px;
+            margin-top: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+        .search-box svg { color: #94a3b8; flex-shrink: 0; }
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            color: #1e293b;
+            background: transparent;
+        }
+
+        /* الموكب الهاتفي */
+        .phone-wrap { position: relative; flex-shrink: 0; }
+        .phone {
+            width: 200px;
+            height: 400px;
+            background: #0f2350;
+            border: 5px solid rgba(255,255,255,0.2);
+            border-radius: 34px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+        }
+        .phone-notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 8px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.25);
+            z-index: 2;
+        }
+        .phone-screen {
+            position: absolute;
+            inset: 14px;
+            background: linear-gradient(160deg, #1e3a8a, #3b82f6);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .phone-screen img {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .phone-screen span { color: white; font-weight: 700; font-size: 0.8rem; }
+        .float-icon {
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: float 2.5s ease-in-out infinite alternate;
+        }
+        .fi1 { background: linear-gradient(135deg, #16a34a, #22c55e); right: -18px; top: 50px; }
+        .fi2 { background: linear-gradient(135deg, #4f46e5, #818cf8); left: -18px; top: 100px; animation-delay: 0.4s; }
+        .fi3 { background: linear-gradient(135deg, #e11d48, #fb7185); right: -14px; bottom: 90px; animation-delay: 0.8s; }
+        .fi4 { background: linear-gradient(135deg, #d97706, #fbbf24); left: -12px; bottom: 40px; animation-delay: 1.2s; }
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* ===== شارات التصنيف ===== */
+        .chips {
+            max-width: 1100px;
+            margin: 25px auto 0;
+            padding: 0 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .chip {
             padding: 8px 20px;
             border-radius: 50px;
-            color: #d9534f;
-            font-weight: bold;
-            border: 1px solid #f5c6cb;
+            background: white;
+            border: 1px solid #e2e8f0;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #475569;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .chip:hover { border-color: #1e3a8a; color: #1e3a8a; }
+        .chip.active { background: #1e3a8a; color: white; border-color: #1e3a8a; }
+
+        /* ===== شبكة التطبيقات ===== */
+        .section-head {
+            max-width: 1100px;
+            margin: 50px auto 20px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: right;
+        }
+        .section-head h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-head h2 svg { color: #2563eb; }
+        .count {
             font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 700;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 6px 16px;
+            border-radius: 50px;
         }
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: #d9534f;
-            border-radius: 50%;
-            margin-left: 8px;
-            animation: blink 1.5s infinite;
+        .count strong { color: #2563eb; font-size: 1rem; }
+        .apps-grid {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 20px;
         }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .copyright { 
-            margin-top: 15px; 
-            font-size: 0.75rem; 
+        .app-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 14px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        }
+        .icon-green { background: linear-gradient(135deg, #16a34a, #22c55e); }
+        .icon-blue { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
+        .icon-orange { background: linear-gradient(135deg, #d97706, #fbbf24); }
+        .soon-icon { background: #f1f5f9; color: #94a3b8; box-shadow: none; }
+        .app-card h3 { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+        .badge {
+            display: inline-block;
+            padding: 3px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .badge-blue { background: #eff6ff; color: #1e40af; }
+        .badge-green { background: #f0fdf4; color: #16a34a; }
+        .badge-purple { background: #f5f3ff; color: #7c3aed; }
+        .app-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .card-btn {
+            display: block;
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            padding: 11px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .card-btn:hover { background: #1e40af; transform: translateY(-2px); }
+
+        /* ===== قسم قريباً ===== */
+        .soon-card {
+            border: 2px dashed #cbd5e1;
+            background: #f8fafc;
+            box-shadow: none;
+        }
+        .soon-card:hover { transform: none; box-shadow: none; border-color: #94a3b8; }
+        .no-results {
+            text-align: center;
             color: #94a3b8;
-            animation: glow 2s ease-in-out infinite;
-        }
-        @keyframes glow {
-            0%, 100% { 
-                opacity: 0.5;
-                text-shadow: 0 0 5px rgba(30, 58, 138, 0.3);
-            }
-            50% { 
-                opacity: 1;
-                text-shadow: 0 0 20px rgba(30, 58, 138, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
-            }
+            font-weight: 700;
+            padding: 30px 20px;
         }
 
-        /* Media Queries للاستجابة */
+        /* ===== الفوتر ===== */
+        .footer {
+            background: linear-gradient(135deg, #0f2350, #1e3a8a);
+            color: white;
+            padding: 45px 20px 20px;
+            margin-top: 70px;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-align: right;
+        }
+        .footer-brand { display: flex; align-items: center; gap: 12px; }
+        .footer-brand img { width: 48px; height: 48px; border-radius: 12px; }
+        .footer-brand strong { font-size: 1.1rem; font-weight: 900; display: block; }
+        .footer-brand p { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+        .footer-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 22px;
+            transition: 0.2s;
+        }
+        .footer-links a:last-child { margin-left: 0; }
+        .footer-links a:hover { color: white; }
+        .footer-social { display: flex; gap: 10px; }
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: 0.2s;
+        }
+        .footer-social a:hover { background: rgba(255,255,255,0.28); transform: translateY(-3px); }
+        .footer-copy {
+            max-width: 1100px;
+            margin: 25px auto 0;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.55);
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 16px;
+        }
+
+        /* ===== Media Queries ===== */
+        @media (max-width: 900px) {
+            .hero-text h2 { font-size: 1.9rem; }
+            .phone { width: 170px; height: 340px; }
+            .float-icon { width: 44px; height: 44px; }
+        }
+
         @media (max-width: 768px) {
-            .hero { padding: 50px 15px 80px; }
-            .hero h2 { font-size: 1.8rem; }
-            .card { max-width: 90%; padding: 25px 15px; }
-            .card:first-child { margin-top: -40px; }
-            .card h3 { font-size: 1.3rem; }
-            .download-btn { padding: 12px 30px; font-size: 0.95rem; width: 90%; }
-            .navbar h1 { font-size: 1.2rem; }
+            .phone-wrap { display: none; }
+            .hero { padding: 50px 15px 60px; }
+            .hero-inner { justify-content: center; text-align: center; }
+            .hero-text p { margin: auto; }
+            .search-box { margin: 25px auto 0; }
+            .chips { justify-content: center; }
+            .section-head { flex-direction: column; gap: 10px; text-align: center; }
+            .nav-links a { font-size: 0.8rem; margin-left: 12px; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-brand { flex-direction: column; text-align: center; }
         }
 
         @media (max-width: 480px) {
-            .hero { padding: 40px 10px 60px; }
-            .hero h2 { font-size: 1.5rem; }
-            .card { max-width: 95%; padding: 20px 12px; }
-            .card:first-child { margin-top: -30px; }
-            .card h3 { font-size: 1.1rem; }
-            .download-btn { padding: 10px 25px; font-size: 0.9rem; width: 95%; }
-            .navbar { padding: 10px; }
-            .navbar h1 { font-size: 1rem; }
-            .status-badge { font-size: 0.75rem; padding: 6px 15px; }
+            .nav-links { display: none; }
+            .hero-text h2 { font-size: 1.6rem; }
+            .hero-text p { font-size: 0.95rem; }
+            .search-box { padding: 11px 16px; }
+            .apps-grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 12px; }
+            .chips { padding: 0 12px; }
+            .app-card { padding: 20px 12px; }
+            .app-card p { font-size: 0.8rem; }
+            .card-btn { font-size: 0.85rem; padding: 10px; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <nav class="navbar">
-        <h1>DIGITAL LINK IQ</h1>
+        <div class="navbar-inner">
+            <a class="brand" href="#top">
+                <img src="logo.png" alt="شعار Digital Link IQ">
+                <h1>DIGITAL LINK IQ</h1>
+            </a>
+            <div class="nav-links">
+                <a href="#top">الرئيسية</a>
+                <a href="#apps">التطبيقات</a>
+                <a href="#soon">قريباً</a>
+                <a href="#contact">تواصل</a>
+            </div>
+        </div>
     </nav>
 
     <header class="hero">
-        <h2>أهلاً بكم في Digital Link</h2>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h2>أهلاً بك في <span>Digital Link IQ</span></h2>
+                <p>تطبيقات وخدمات رقمية عراقية في مكان واحد — ابحث عن تطبيقك وحمّله الآن مجاناً</p>
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="search" id="search" placeholder="ابحث عن تطبيق..." aria-label="ابحث عن تطبيق">
+                </div>
+            </div>
+            <div class="phone-wrap" aria-hidden="true">
+                <div class="phone">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <img src="logo.png" alt="">
+                        <span>Digital Link IQ</span>
+                    </div>
+                </div>
+                <div class="float-icon fi1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                </div>
+                <div class="float-icon fi2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </div>
+                <div class="float-icon fi3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div class="float-icon fi4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 4 2 9 12 14 22 9"/><path d="M6 11.5v4a6 3.5 0 0 0 12 0v-4"/></svg>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main class="card">
-        <h3>  تطبيق فاتورة الكهرباء Bill X</h3>
-        <a href="https://digital-link-iq.github.io/BillX/" class="download-btn" aria-label="تحميل تطبيق Bill X">تحميل التطبيق</a>
-    </main>
-    
-    <main class="card">
-        <h3>تطبيق Nibras-Almomen</h3>
-        <a href="https://digital-link-iq.github.io/Nnibras-almomen/" class="download-btn" aria-label="تحميل تطبيق Nnibras-Almomen">تحميل التطبيق</a>
+    <div class="chips" role="group" aria-label="تصفية التطبيقات حسب التصنيف">
+        <button class="chip active" data-filter="all">الكل</button>
+        <button class="chip" data-filter="services">خدمات</button>
+        <button class="chip" data-filter="islamic">إسلامي</button>
+        <button class="chip" data-filter="soon">قريباً</button>
+    </div>
+
+    <main>
+        <div class="section-head" id="apps">
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                جميع التطبيقات
+            </h2>
+            <span class="count">عدد التطبيقات المتوفرة: <strong id="app-count">3</strong></span>
+        </div>
+
+        <section class="apps-grid" aria-label="قائمة التطبيقات">
+            <article class="app-card" data-category="services" data-search="Bill X فاتورة الكهرباء الكهرباء العراقية حساب كهرباء">
+                <div class="app-icon icon-green" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                </div>
+                <h3>تطبيق Bill X</h3>
+                <span class="badge badge-green">خدمات</span>
+                <p>الحل الذكي والأدق لحساب فاتورة الكهرباء في العراق</p>
+                <a href="https://digital-link-iq.github.io/BillX/" class="card-btn">تحميل التطبيق</a>
+            </article>
+
+            <article class="app-card" data-category="islamic" data-search="نبراس المؤمن Nibras Almomen إسلامي عبادات أذكار قرآن">
+                <div class="app-icon icon-blue" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </div>
+                <h3>تطبيق نبراس المؤمن</h3>
+                <span class="badge badge-blue">إسلامي</span>
+                <p>تطبيق إسلامي شامل للعبادات والأذكار</p>
+                <a href="https://digital-link-iq.github.io/Nnibras-almomen/" class="card-btn">تحميل التطبيق</a>
+            </article>
+
+            <article class="app-card" data-category="services" data-search="Solar X سولار حاسبة الطاقة الشمسية طاقة شمسية منظومة ألواح عاكس بطاريات">
+                <div class="app-icon icon-orange" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </div>
+                <h3>تطبيق Solar X</h3>
+                <span class="badge badge-green">خدمات</span>
+                <p>حاسبة الطاقة الشمسية الاحترافية — صمّم منظومتك بدقة هندسية</p>
+                <a href="https://digital-link-iq.github.io/SolarX/" class="card-btn">تحميل التطبيق</a>
+            </article>
+        </section>
+
+        <p class="no-results" id="no-results" style="display:none">لا توجد نتائج مطابقة لبحثك</p>
+
+        <div class="section-head" id="soon">
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                قريباً
+            </h2>
+        </div>
+
+        <section class="apps-grid" aria-label="تطبيقات قادمة قريباً">
+            <article class="app-card soon-card" data-category="soon" data-search="تطبيق جديد قريباً">
+                <div class="app-icon soon-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <h3>تطبيق جديد</h3>
+                <span class="badge badge-purple">قريباً</span>
+                <p>نعمل على تطبيقات جديدة ستُضاف إلى المتجر قريباً</p>
+            </article>
+
+            <article class="app-card soon-card" data-category="soon" data-search="تطبيق جديد قريباً">
+                <div class="app-icon soon-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <h3>تطبيق جديد</h3>
+                <span class="badge badge-purple">قريباً</span>
+                <p>تابعونا لمعرفة المزيد عن إصداراتنا القادمة</p>
+            </article>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="status-badge" role="status" aria-live="polite">
-            <span class="dot" aria-hidden="true"></span>
-            موقع Digital Link تحت التحديث والتطوير حالياً
+    <footer class="footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="logo.png" alt="شعار Digital Link IQ">
+                <div>
+                    <strong>DIGITAL LINK IQ</strong>
+                    <p>تطبيقات وخدمات رقمية عراقية في مكان واحد</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#top">الرئيسية</a>
+                <a href="#apps">التطبيقات</a>
+                <a href="#soon">قريباً</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="تيليجرام">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </a>
+                <a href="#" aria-label="فيسبوك">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="#" aria-label="يوتيوب">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+            </div>
         </div>
-        <p class="copyright"> 2026 Digital Link IQ </p>
+        <p class="footer-copy">© 2025 Digital Link IQ — جميع الحقوق محفوظة</p>
     </footer>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const cards = document.querySelectorAll('.app-card');
+        const realCards = document.querySelectorAll('.app-card:not(.soon-card)');
+        const countEl = document.getElementById('app-count');
+        const noResults = document.getElementById('no-results');
+        const chips = document.querySelectorAll('.chip');
+        let activeFilter = 'all';
+
+        function applyFilters() {
+            const q = (searchInput.value || '').trim().toLowerCase();
+            let visibleReal = 0;
+            let visibleAll = 0;
+            cards.forEach(card => {
+                const text = (card.dataset.search || '').toLowerCase();
+                const cat = card.dataset.category || '';
+                const match = text.includes(q) && (activeFilter === 'all' || cat === activeFilter);
+                card.style.display = match ? '' : 'none';
+                if (match) {
+                    visibleAll++;
+                    if (!card.classList.contains('soon-card')) visibleReal++;
+                }
+            });
+            countEl.textContent = visibleReal;
+            noResults.style.display = visibleAll === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                activeFilter = chip.dataset.filter;
+                chips.forEach(c => c.classList.toggle('active', c === chip));
+                applyFilters();
+            });
+        });
+    </script>
 
 </body>
 </html>
