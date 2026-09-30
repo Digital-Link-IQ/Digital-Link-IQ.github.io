@@ -115,6 +115,28 @@
         }
         .search-clear:hover { background: #e2e8f0; }
         .search-clear.visible { display: flex; }
+
+        /* شريط Google Play القادم */
+        .play-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: fit-content;
+            max-width: 92%;
+            margin: -35px auto 0;
+            padding: 12px 26px;
+            background: white;
+            border: 1px solid rgba(245, 197, 24, 0.45);
+            border-radius: 9999px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 5;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+        .play-banner strong { color: #1A2C8F; }
         @keyframes rise {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
@@ -285,6 +307,16 @@
             </button>
         </div>
     </header>
+
+    <div class="play-banner">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#00c4ff" d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 0 1-.291-.707V2.521c0-.265.105-.52.291-.707z"/>
+            <path fill="#ffce00" d="M17.39 8.315l-3.598 3.685 3.598 3.685 4.163-2.203a1 1 0 0 0 0-1.764l-4.163-2.203z"/>
+            <path fill="#00e076" d="M13.792 12L3.609 22.186c.19.186.475.24.72.12l13.061-6.891-3.598-3.415z"/>
+            <path fill="#ff3a44" d="M17.39 8.315L4.329 1.694c-.245-.12-.53-.066-.72.12L13.792 12l3.598-3.685z"/>
+        </svg>
+        <span>التطبيقات ستتوفر قريباً على متجر <strong>Google Play</strong></span>
+    </div>
 
     <main>
         <section class="apps-grid" aria-label="قائمة التطبيقات">
